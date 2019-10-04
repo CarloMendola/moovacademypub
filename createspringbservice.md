@@ -209,7 +209,7 @@ Il metodo `main()` invoca il metodo `SpringApplication.run()` di Spring Boot per
 #### Creiamo il nostro JAR eseguibile
 È possibile eseguire l'applicazione dalla riga di comando con **Gradle** o **Maven**. È inoltre possibile creare un singolo file **JAR** eseguibile che contenga tutte le dipendenze, le classi e le risorse necessarie ad eseguirlo. La creazione di un unico **JAR** eseguibile semplifica la gestione del servizio durante il suo intero ciclo di vita.
 
-Utilizzando Maven sarà possibile eseguire l'applicazione con il seguente comando `./mvnw spring-boot: run`. In alternativa, sarà possibile creare il file **JAR** tramite il comando `./mvnw` e successivamente eseguire il file **JAR**, come segue:
+Sarà ora possibile creare il file **JAR** tramite il comando `mvn clean package` e successivamente eseguire il file **JAR**, come segue:
 ```
 java -jar target/gs-rest-service-0.1.0.jar
 ```
