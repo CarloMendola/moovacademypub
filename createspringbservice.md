@@ -211,7 +211,7 @@ Il metodo `main()` invoca il metodo `SpringApplication.run()` di Spring Boot per
 
 Sarà ora possibile creare il file **JAR** tramite il comando `mvn clean package` e successivamente eseguire il file **JAR**, come segue:
 ```
-java -jar target/gs-rest-service-0.1.0.jar
+$ java -jar target/gs-rest-service-0.1.0.jar
 ```
 Entro pochi secondi verrà visualizzato l'output del log e il servizio sarà essere attivo e funzionante.
 
