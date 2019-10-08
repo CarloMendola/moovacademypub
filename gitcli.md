@@ -124,5 +124,24 @@ Una volta creati, i tag sono selezionabili come si puo' fare con branch e commit
 Se vengono prodotte modifiche a partire da un commit in modalita' detached HEAD, e' sempre consigliabile applicare un riferimento a quest'ultimo (branch o tag) **prima** di selezionare un'altra versione con il comando git chechout. Se l'operazione descritta in precedenza non viene effettuata, il commit non viene tracciato dal comando che visualizza il version tree completo del repository. In ogni caso, fino a che non si elimina il repository locale e' possibile recuperarlo selezionandone l'hash tracciato dall'output del comando **git reflog**. 
 Per approfondimento su git reflog vedi [Git Reflog](https://git-scm.com/docs/git-reflog) :fire:
 
-#### Mistakes with Git
-TODO: force
+#### Mistakes and Remedies
+Usando git, a tutti e' capitato almeno una volta di sbagliare, ai piu' sfortunati anche piu' volte e in contesti diversi, e come spesso capita, si finisce nel panico alla ricerca di una soluzione al problema.
+Di seguito alcune delle casistiche piu' comuni.
+- errore nel messaggio di commit in locale
+    La soluzione a questo problema e' molto semplice, e consiste nell'eseguire nuovamente il comando di commit con il parametro **--amend**.
+    ```
+    git commit -m "wrong message?!"
+    git commit --amend -m "I was mistaken, this is the right message!"
+    ```
+- dimenticato di aggiungere uno o piu' file all'indice prima del commit
+    La soluzione a questo problema e' simile alla precedente, e consiste nell'utilizzo del comando **git add** prima di utilizzare il comando di commit con la clausosa di **--amend**
+    ```
+    git add a_file another_file
+    git commit -m "maybe right message but i forgot to commit the most important file!"
+    git add the_most_important_file
+    git commit --amend -m "my definitive commit message!"
+    ```
+- sbagliato push su repository centrale
+    La soluzione a questo problema e' semplice ma puo' essere soggetta a limitazioni di permessi da parte della piattaforma che ospita il repository centrale.
+    In caso sia eseguito un push di un riferimento errato oppure si voglia eliminare del tutto uno o piu commit, e' possibile modificare il proprio repository locale come si desidera, e una volta sicuri del risultato si puo' effettuare nuovamente l'operazione di push con il parametro di **force-with-lease** o di **force**.
+    Quest'ultima operazione e' distruttiva e va eseguita solo dopo aver fatto parecchi tentativi su ambienti controllati. Chi utilizza quest'operazione dovrebbe segnalarne l'esecuzione per evitare conflitti a chi in parallelo avesse gia effettuato un rebase prima della correzione con il force.
