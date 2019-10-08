@@ -2,3 +2,4 @@
 * [Creare un servizio Spring Boot](./createspringbservice.md) - :gift: 300 pt - :clock10: ~ 50 min
 * [Docker: creare un container per esercire un'applicazione Java](./createservicedocker.md) - :gift: 300 pt - :clock10: ~ 60-100 min
 * [Kafka: Creare un cluster Kafka con docker](./clusterkafka.md) - :gift: 500pt - :clock10: ~ 60-100 min
+* [GIT: una panoramica dalla command line](./gitcli.md) - :gift: 350pt - :clock10: ~ 60 min
